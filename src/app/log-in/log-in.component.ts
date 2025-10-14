@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {SolidityServiceService} from '../solidity-service.service';
 import {providers, Contract} from 'ethers';
 import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.json';
+import { environment } from 'src/environments/environment';
 declare global {
   interface Window {
     ethereum: any;
@@ -23,7 +24,7 @@ export class LogInComponent implements OnInit {
   provider = new providers.Web3Provider(window.ethereum, "any")
   singer: any;
   constract: any = {};
-   resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+  resourceAddress = environment.resourceAddress;
 
   users = [];
 

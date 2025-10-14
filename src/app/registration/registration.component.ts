@@ -6,6 +6,9 @@ import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.j
 import usersdata from '../data/users.json';
 import { map } from 'rxjs';
 import {SolidityServiceService} from '../solidity-service.service';
+import { environment } from 'src/environments/environment';
+import { EventEmitter } from 'stream';
+
 declare global {
   interface Window {
     ethereum: any;
@@ -38,10 +41,10 @@ export class RegistrationComponent implements OnInit {
   //provides = new ethers.providers.JsonRpcProvider()
   singer: any;
   constract: any = {};
-  resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+  resourceAddress = environment.resourceAddress;
 
-  prvKey = '0xdf57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e';
-  walletaddress: string = '0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199';
+  prvKey = environment.prvKey;
+  walletaddress: string = environment.walletaddress;
 
   api = '/api/';
 

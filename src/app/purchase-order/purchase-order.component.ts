@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import {SolidityServiceService} from '../solidity-service.service';
 import {providers, Contract, ethers, Wallet} from 'ethers';
 import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.json';
+import { environment } from 'src/environments/environment';
+
 declare global {
   interface Window {
     ethereum: any;
@@ -28,8 +30,7 @@ export class PurchaseOrderComponent implements OnInit {
   singer: any;
   constract: any = {};
   totalCost: number = 0;
-   resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
-
+  resourceAddress = environment.resourceAddress;
 
   constructor(private soliditySrv: SolidityServiceService) { }
 
