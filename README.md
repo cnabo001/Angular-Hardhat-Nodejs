@@ -1,27 +1,137 @@
-# Pharmanet
+# Decentralized Pharmaceutical Supply Chain (Angular + Hardhat + Node.js)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+Pharmanet is a full-stack **Web3 dApp** demonstrating **smart contract development, blockchain integration, and frontend interaction with Ethereum**. It is built using **Angular 14**, **Node.js**, **Ethers.js**, and **Hardhat** for local smart contract deployment and testing.
 
-## Development server
+This project showcases **end-to-end dApp development**, including writing, compiling, deploying, and interacting with smart contracts on a local blockchain network.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## ✅ Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Layer            | Technology Used                         |
+|------------------|-----------------------------------------|
+| Frontend         | Angular 14, TypeScript                  |
+| Smart Contracts  | Solidity (Hardhat framework)           |
+| Blockchain Tools | Hardhat, Ethers.js, Local Test Network |
+| Backend Scripts  | Node.js                                |
+| Package Manager  | npm                                    |
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔧 Prerequisites
 
-## Running unit tests
+Before running this project, ensure the following are installed:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Node.js v16 or higher** → https://nodejs.org
+- **npm** (comes with Node.js)
+- **Git** → https://git-scm.com
+- **VS Code recommended** → https://code.visualstudio.com
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Getting Started
 
-## Further help
+### 1. Clone the Repository
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone <repo-url>
+cd Pharmanet
+
+2. Install Dependencies
+
+From the Pharmanet project root:
+
+npm install
+
+
+✅ Make sure your Node version is 16+ (node -v to verify)
+
+3. Start Local Blockchain with Hardhat
+
+In a terminal, while inside the Pharmanet folder:
+
+npx hardhat node
+
+
+This launches a local Ethereum test blockchain on http://127.0.0.1:8545 and gives you test accounts and private keys.
+
+4. Deploy Smart Contract Locally
+
+Open a new terminal window (keep Hardhat node running), then run:
+
+npx hardhat run scripts/deploy.js --network localhost
+
+
+After deployment, Hardhat will print a contract address to console, similar to:
+
+Contract deployed to: 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
+
+
+✅ Copy this address — you will need it in the next step.
+
+5. Update Contract Address in Angular App
+
+In VS Code:
+
+Click the Search icon
+
+Search for:
+
+resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+
+
+Replace the address with the new deployment address from step 4
+
+Click Replace All
+
+⚠️ This ensures the frontend points to your freshly deployed contract.
+
+6. Start Angular Frontend
+
+Launch the Angular app:
+
+npm start
+
+
+This builds and serves the frontend locally at:
+
+http://localhost:4200/
+
+
+Your dApp is now live and connected to your local blockchain 👍
+
+📂 Project Structure
+Pharmanet/
+├── contracts/              # Smart contracts (.sol)
+├── scripts/                # Deployment scripts
+├── src/app/                # Angular frontend code
+├── hardhat.config.js       # Hardhat settings
+├── package.json            # Dependencies & scripts
+└── README.md               # Project documentation
+
+🧪 Development Workflow
+Task	Command
+Compile contracts	npx hardhat compile
+Run local blockchain	npx hardhat node
+Deploy contracts locally	npx hardhat run scripts/deploy.js --network localhost
+Run Angular app	npm start
+✅ Features Demonstrated
+
+✔ Solidity Smart Contract Programming
+✔ Deployment with Hardhat
+✔ Local Ethereum Blockchain Development
+✔ Angular Web3 UI Integration
+✔ Ethers.js Contract Interaction
+✔ Realistic Fullstack dApp Architecture
+
+📜 License
+
+This project is for educational and portfolio demonstration purposes.
+
+👨🏾‍💻 Author
+
+Chris Nabors
+Full Stack Blockchain Developer
+Portfolio: https://multiplexconcepts.org
+
+GitHub: https://github.com/cnabo001
