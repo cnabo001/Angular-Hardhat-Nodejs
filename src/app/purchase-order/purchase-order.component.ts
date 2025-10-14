@@ -3,15 +3,12 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import {SolidityServiceService} from '../solidity-service.service';
 import {providers, Contract, ethers, Wallet} from 'ethers';
 import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.json';
-import { environment } from 'src/environments/environment';
 
 declare global {
   interface Window {
     ethereum: any;
   }
 }
-
-
 
 @Component({
   selector: 'app-purchase-order',
@@ -30,7 +27,6 @@ export class PurchaseOrderComponent implements OnInit {
   singer: any;
   constract: any = {};
   totalCost: number = 0;
-  resourceAddress = environment.resourceAddress;
 
   constructor(private soliditySrv: SolidityServiceService) { }
 
@@ -38,13 +34,11 @@ export class PurchaseOrderComponent implements OnInit {
     await this.provider.send("eth_requestAccounts", []);
     this.singer = this.provider.getSigner();
     this.user_eth_address = await this.singer.getAddress();
-    console.log('this contract: ', contract);
     this.constract = new Contract(this.soliditySrv.resourceAddress, contract.abi, this.singer);
 
-    let d = await this.getDrugs();
-    if(d){
-      this.drugs = d;
-      console.log('d: ', d)
+    let drugsList = await this.getDrugs();
+    if(drugsList){
+      this.drugs = drugsList;
     }
   }
 
@@ -53,7 +47,6 @@ export class PurchaseOrderComponent implements OnInit {
       this.constract.getDrugs()
       .then((res: any) => {
         if(res){
-          console.log('what: ', res)
           return resolve(res)
         } else {
           return reject('error')

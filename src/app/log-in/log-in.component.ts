@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
-import {SolidityServiceService} from '../solidity-service.service';
 import {providers, Contract} from 'ethers';
 import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.json';
 import { environment } from 'src/environments/environment';
@@ -29,7 +28,6 @@ export class LogInComponent implements OnInit {
   users = [];
 
   constructor(private router : Router, 
-    private soliditySrv: SolidityServiceService,
     private fb: FormBuilder) { }
 
   async ngOnInit() {
@@ -40,7 +38,6 @@ export class LogInComponent implements OnInit {
     await this.provider.send("eth_requestAccounts", []);
     this.singer = this.provider.getSigner();
     this.user_eth_address = await this.singer.getAddress();
-    console.log('this contract: ', contract);
     this.constract = new Contract(this.resourceAddress, contract.abi, this.singer);
 
     this.users = await this.constract.getUsers();
@@ -71,7 +68,6 @@ export class LogInComponent implements OnInit {
         }
         this.router.navigate([url]);
       }
-    //alert(stringify(body));
   }
   getAccountInfo(username: any, password: any) 
   {

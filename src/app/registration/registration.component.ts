@@ -38,7 +38,6 @@ export class RegistrationComponent implements OnInit {
   private wallet!: Wallet;
   provider = new providers.Web3Provider(window.ethereum, "any")
   usersList = [];
-  //provides = new ethers.providers.JsonRpcProvider()
   singer: any;
   constract: any = {};
   resourceAddress = environment.resourceAddress;
@@ -48,7 +47,7 @@ export class RegistrationComponent implements OnInit {
 
   api = '/api/';
 
-  constructor(private http: HttpClient, private soliditySrv: SolidityServiceService) { }
+  constructor() { }
 
   async ngOnInit() {
     console.log("this types: ", this.user_types);

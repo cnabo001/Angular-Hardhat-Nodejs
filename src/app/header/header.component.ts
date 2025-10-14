@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  onSearch(){
+    console.log('TODO: Searching...');
+  }
+
 }

@@ -1,10 +1,6 @@
 <form [formGroup]="newDrugForm" style="margin: auto; padding: 40px;">
     <h1>Manufacter</h1>
     <h3>Create Drug</h3>
-    <!-- <div class="mb-3">
-      <label for="newDrug.UID" class="form-label">ID</label>
-      <input type="number" class="form-control" [(ngModel)]="newDrug.UID">
-    </div> -->
     <div class="mb-3">
       <label class="form-label">Name</label>
       <input type="text" id="drug_name" class="form-control" formControlName="name">
@@ -22,19 +18,13 @@
                 <th>Price</th>
             </tr>
             <tbody>
-                <tr *ngFor="let drug of drugs[0]">
-                    <td>{{drug.UID}}</td>
-                    <td>{{drug.drug_name}}</td>
-                    <td>{{drug.unit_price}}</td>
-                </tr>
                 <ng-container *ngIf="drugs.length > 0">
-                  <tr *ngFor="let drug of drugs[1]">
+                  <tr *ngFor="let drug of drugs">
                     <td>{{drug.UID}}</td>
                     <td>{{drug.drug_name}}</td>
                     <td>{{drug.unit_price}}</td>
                 </tr>
                 </ng-container>
-                
             </tbody>
         </table>
     </div>

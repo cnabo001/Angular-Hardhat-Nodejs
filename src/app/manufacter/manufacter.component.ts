@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms'
-import {providers, Contract, ethers, Wallet} from 'ethers';
+import {providers, Contract } from 'ethers';
 import  contract from '../../../artifacts/contracts/PhramaNet.sol/PharmaNetEth.json';
 import { environment } from 'src/environments/environment';
 
@@ -24,8 +24,7 @@ export class ManufacterComponent implements OnInit {
   constract: any = {};
   public user_eth_address: any;
   provider = new providers.Web3Provider(window.ethereum, "any")
-   resourceAddress = environment.resourceAddress;
-
+  resourceAddress = environment.resourceAddress;
   prvKey = environment.prvKey;
   walletaddress: string = environment.walletaddress;
 
@@ -45,12 +44,10 @@ export class ManufacterComponent implements OnInit {
   async createDrug(){
     let name: any = this.newDrugForm.value['name'];
     let price: any = this.newDrugForm.value['price'];
-    console.log('request: ', name, price);
     let process = await this.constract.addDrug(name, price);
     if(process){
       let drugData = await this.constract.getDrugs();
       this.drugs = drugData;
-      console.log('and the drugs are: ', drugData);
     }
   }
 
