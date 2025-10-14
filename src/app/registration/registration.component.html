@@ -1,0 +1,43 @@
+<div style="margin: auto; padding: 40px;">
+    <div class="mb-3">
+        Ethereum addess: {{user_eth_address}}
+    </div>
+    <div class="mb-3">
+        <div *ngFor="let type of user_types">
+            <input type="radio" [value]="type.id"
+            [(ngModel)]="user_type" 
+            (change)="onTypeChange(type.id)"> 
+            {{type.id}}     
+        </div>
+    </div>
+    <div class="mb-3">
+      <label for="user_name" class="form-label">user name</label>
+      <input type="text" class="form-control" [(ngModel)]="user_name">
+    </div>
+    <div class="mb-3">
+        <label for="user_password" class="form-label">password</label>
+        <input type="text" class="form-control" [(ngModel)]="user_password">
+      </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">address</label>
+        <input type="text" class="form-control" [(ngModel)]="address">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">state</label>
+        <input type="text" class="form-control" [(ngModel)]="state">
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label">country</label>
+        <input type="text" class="form-control" [(ngModel)]="country">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="register()">Submit</button>
+</div>
+
+<div style="margin: auto; padding: 40px;" 
+*ngIf="registered_info != null && registered_info != undefined">
+user name: {{registered_info.user_name}}<br>
+user type: {{registered_info.user_type}}<br>
+address: {{registered_info.user_address}}<br>
+state: {{registered_info.state}}<br>
+Country: {{registered_info.country}}
+</div>

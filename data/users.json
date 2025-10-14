@@ -1,0 +1,4 @@
+{   "users": [
+        {"user_name":"test","password":"test","address":"test","user_type":"Transporter","state":"test","country":"test"}
+    ]
+}

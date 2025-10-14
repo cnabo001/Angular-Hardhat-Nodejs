@@ -9,7 +9,19 @@
 # Node
 /node_modules
 npm-debug.log
+yarn-debug.log
 yarn-error.log
+package-lock.json
+*.log
+
+# Hardhat
+cache/
+artifacts/
+
+# Environment
+.env
+.env.local
+.env.*.local
 
 # IDEs and editors
 .idea/
@@ -19,6 +31,15 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Visual Studio Code
 .vscode/*
