@@ -75,14 +75,8 @@ In VS Code:
 
 Click the Search icon
 
-Search for:
-
+got to <root>/src/environments/environment.ts file, then change:
 resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
-
-
-Replace the address with the new deployment address from step 4
-
-Click Replace All
 
 ⚠️ This ensures the frontend points to your freshly deployed contract.
 
