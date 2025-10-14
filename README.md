@@ -1,6 +1,6 @@
 # Decentralized Pharmaceutical Supply Chain (Angular + Hardhat + Node.js)
 
-Pharmanet is a full-stack **Web3 dApp** demonstrating **smart contract development, blockchain integration, and frontend interaction with Ethereum**. It is built using **Angular 14**, **Node.js**, **Ethers.js**, and **Hardhat** for local smart contract deployment and testing.
+Pharmanet (Name of this angular, node, solidity project) is a full-stack **Web3 dApp** demonstrating **smart contract development, blockchain integration, and frontend interaction with Ethereum**. It is built using **Angular 14**, **Node.js**, **Ethers.js**, and **Hardhat** for local smart contract deployment and testing.
 
 This project showcases **end-to-end dApp development**, including writing, compiling, deploying, and interacting with smart contracts on a local blockchain network.
 
@@ -131,7 +131,7 @@ This project is for educational and portfolio demonstration purposes.
 👨🏾‍💻 Author
 
 Chris Nabors
-Full Stack Blockchain Developer
-Portfolio: https://multiplexconcepts.org
+Full Stack Web|Mobile|Blockchain Developer
+Portfolio: https://multiplexconcepts-bfc.web.app
 
 GitHub: https://github.com/cnabo001
