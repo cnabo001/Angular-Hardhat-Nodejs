@@ -72,11 +72,8 @@ Contract deployed to: 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
 5. Update Contract Address in Angular App
 
 In VS Code:
-
-Click the Search icon
-
-got to <root>/src/environments/environment.ts file, then change:
-resourceAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+go to <root>/src/environments/environment.ts file, then change:
+resourceAddress = "<Printed_out_contract_address_from_terminal>";
 
 ⚠️ This ensures the frontend points to your freshly deployed contract.
 
